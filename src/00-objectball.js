@@ -113,6 +113,11 @@ function gameObject(){
             },
         },
     }
+    return teamStats;
 };
 
-console.log(gameObject());
+function homeTeamName() {
+    return gameObject().home.teamName;
+}
+
+console.log(homeTeamName());
