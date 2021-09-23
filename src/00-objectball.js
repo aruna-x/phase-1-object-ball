@@ -120,4 +120,40 @@ function homeTeamName() {
     return gameObject().home.teamName;
 }
 
-console.log(homeTeamName());
+function numPointsScored(playerName) {
+    // returns number of points scored for that player
+    const teamStats = gameObject();
+    const homePlayers = teamStats.home.players;
+    const awayPlayers = teamStats.away.players;
+    if(homePlayers[playerName]) {
+        return homePlayers[playerName].points
+    } else if(awayPlayers[playerName]) {
+        return awayPlayers[playerName].points
+    }
+}
+
+function shoeSize(playerName) {
+    // returns number of points scored for that player
+    const teamStats = gameObject();
+    const homePlayers = teamStats.home.players;
+    const awayPlayers = teamStats.away.players;
+    if(homePlayers[playerName]) {
+        return homePlayers[playerName].shoe
+    } else if(awayPlayers[playerName]) {
+        return awayPlayers[playerName].shoe
+    }
+}
+
+function teamColors(teamName) {
+    // returns number of points scored for that player
+    const teamStats = gameObject();
+    const homeTeam = teamStats.home;
+    const awayTeam = teamStats.away;
+    if(homeTeam.teamName === teamName) {
+        return homeTeam.colors
+    } else if(awayTeam.teamName === teamName) {
+        return awayTeam.colors
+    }
+}
+
+console.log(teamColors('Brooklyn Nets'))
